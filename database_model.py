@@ -7,3 +7,9 @@ class product(Base):
     name=Column(String)
     price=Column(Float)
     desc=Column(String)
+
+class user(Base):
+    __tablename__ ="user"
+    id = Column(Integer,primary_key=True)
+    email = Column(String,nullable=False)
+    password = Column(String,nullable=False)
