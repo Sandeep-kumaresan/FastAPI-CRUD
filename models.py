@@ -5,3 +5,6 @@ class Product(BaseModel):
     name:str
     price:float
     desc:str
+class User(BaseModel):
+    email:str
+    password:str

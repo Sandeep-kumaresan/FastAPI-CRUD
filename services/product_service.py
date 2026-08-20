@@ -1,7 +1,7 @@
 from fastapi import Depends,HTTPException
 from sqlalchemy.orm import Session
 from database import session
-from database_model import product as dbpr
+from database_model import Product as dbpr
 
 
 

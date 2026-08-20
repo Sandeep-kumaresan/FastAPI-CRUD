@@ -7,18 +7,18 @@ class Product(Base):
     name=Column(String)
     price=Column(Float)
     desc=Column(String)
-    order=relationship("user_order",back_populates="product")
+    order=relationship("User_order",back_populates="product")
 
 class User(Base):
     __tablename__ ="user"
     email = Column(String,primary_key=True)
     password = Column(String,nullable=False)
-    order=relationship("user_order",back_populates="user")
+    order=relationship("User_order",back_populates="user")
     
 class User_order(Base):
     __tablename__="userorder"
     id=Column(Integer,primary_key=True)
     email_id=Column(String,ForeignKey(User.email))
     product_id=Column(Integer,ForeignKey(Product.id))
-    product = relationship("product",back_populates="order")
-    user=relationship("user",back_populates="order")
+    product = relationship("Product",back_populates="order")
+    user=relationship("User",back_populates="order")

@@ -6,3 +6,9 @@ load_dotenv()
 db_url = os.getenv("DB_URL")
 engine = create_engine(db_url)
 session = sessionmaker(bind=engine,autoflush=False)
+def db_conn():
+    db=session()
+    try:
+        yield db
+    finally:
+        db.close()
