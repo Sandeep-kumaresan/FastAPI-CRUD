@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,EmailStr
 
 class Product(BaseModel):
     id:int
@@ -6,5 +6,5 @@ class Product(BaseModel):
     price:float
     desc:str
 class User(BaseModel):
-    email:str
+    email:EmailStr
     password:str
